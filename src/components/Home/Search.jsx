@@ -6,7 +6,7 @@ function Search() {
             <input
                 className="rounded-full bg-twittergrey px-3 py-1 focus:border focus:border-twitterpurple"
                 type="text"
-                placeholder="Search Bug"
+                placeholder="Search Twitter"
             />
             <div>Whats happening</div>
         </div>
