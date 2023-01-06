@@ -8,7 +8,9 @@ function App() {
         <div className="flex h-screen items-stretch overflow-y-scroll text-gray-200 ">
             <Sidebar />
             <Feed />
-            <Search />
+            <div className="flex grow items-start">
+                <Search />
+            </div>
         </div>
     );
 }

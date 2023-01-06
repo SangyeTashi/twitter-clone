@@ -8,7 +8,7 @@ module.exports = {
                 twitterpurple: '#3c2b7f',
                 twitterPurpleLight: '#7856ff',
                 twitterblack: '#000000',
-                twittergrey: '#202327',
+                twittergrey: '#16181c',
                 twitterblue: '#1c99ee',
             },
             flexGrow: {
