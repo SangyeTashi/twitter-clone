@@ -34,8 +34,8 @@ function Tweet({ userName, userId, isVerified, avatar }) {
 
     return (
         <div className="flex space-x-1 border-b border-twittergrey p-3 ">
-            <div className="p h-12 w-12 shrink-0 overflow-hidden rounded-full bg-slate-700">
-                <img className="object-cover" src={avatar} alt="" />
+            <div className=" h-12 w-12 shrink-0  overflow-hidden rounded-full bg-slate-700">
+                <img className=" object-cover " src={avatar} alt="" />
             </div>
             <div className="space-y-2 p-2">
                 <div className="flex items-center space-x-1">

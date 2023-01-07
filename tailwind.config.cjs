@@ -9,8 +9,10 @@ module.exports = {
                 twitterPurpleLight: '#7856ff',
                 twitterblack: '#000000',
                 twittergrey: '#16181c',
+                twittergreylight:"#242d34",
                 twitterblue: '#1c99ee',
             },
+
             flexGrow: {
                 2: 2,
             },
