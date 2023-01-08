@@ -5,3 +5,9 @@
 * {
     box-sizing: border-box;
 }
+
+@layer components {
+    .btn-primary {
+        @apply cursor-pointer rounded-full p-2 hover:bg-twittergrey;
+    }
+}

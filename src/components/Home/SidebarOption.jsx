@@ -2,9 +2,11 @@ import React from 'react';
 
 function SidebarOption({ Icon, text = null }) {
     return (
-        <div className="sidebar-icon  group  flex cursor-pointer  space-x-3   rounded-full p-2 text-gray-100 hover:bg-twittergrey xl:px-4">
-            <div className="relative  h-8 w-8 shrink-0 text-center">
-                <Icon sx={{ fontSize: 30 }} />
+        <div className="btn-primary group flex items-center space-x-2">
+            <div className="relative">
+                <div className="text-center">
+                    <Icon sx={{ fontSize: 27 }} />
+                </div>
                 <span
                     className="
                     absolute
@@ -18,14 +20,13 @@ function SidebarOption({ Icon, text = null }) {
                     ease-in 
                     group-hover:scale-100
                     group-hover:delay-700
-
                     xl:hidden
                     "
                 >
                     {text}
                 </span>
             </div>
-            <h2 className="hidden text-xl xl:inline-block">{text}</h2>
+            <h2 className="hidden pr-1.5 text-xl xl:inline-block">{text}</h2>
         </div>
     );
 }

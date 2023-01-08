@@ -12,7 +12,7 @@ function Tweet({ userName, userId, isVerified, avatar }) {
         const fetchImage = async () => {
             await axios
                 .get(
-                    'https://random.imagecdn.app/v1/image?width=570&height=360&category=nature&format=json'
+                    'https://random.imagecdn.app/v1/image?width=490&height=300&category=nature&format=json'
                 )
                 .then((data) => {
                     setImg(data.data.url);

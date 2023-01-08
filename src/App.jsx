@@ -5,7 +5,7 @@ import Search from './components/Home/Search';
 
 function App() {
     return (
-        <div className="flex h-screen items-stretch overflow-y-scroll text-gray-200 ">
+        <div className="flex h-screen items-stretch overflow-y-scroll text-gray-200 xl:space-x-6 ">
             <header className="flex h-screen grow flex-col items-end justify-between p-2 text-lg">
                 <Sidebar />
             </header>
