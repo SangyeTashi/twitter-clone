@@ -2,7 +2,7 @@ import React from 'react';
 import TrendWidget from './TrendWidget';
 function Search() {
     return (
-        <div className="hidden w-[330px] flex-col space-y-4 px-5 py-2 lg:flex">
+        <div className="hidden w-[330px] flex-col space-y-4 px-4 py-2 lg:flex">
             <input
                 className="rounded-full border-2 border-transparent bg-twittergrey px-5 py-3 text-sm outline-none focus:border-twitterpurple focus:bg-twitterblack"
                 type="text"
