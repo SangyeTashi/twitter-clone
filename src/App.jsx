@@ -3,6 +3,7 @@ import './App.css';
 import Feed from './components/Home/Feed';
 import Search from './components/Home/Search';
 import useFetch from './components/Home/useFetch';
+import FeedLoading from './components/Home/FeedLoading';
 
 function App() {
     const { data, error, isLoading } = useFetch(
@@ -15,7 +16,7 @@ function App() {
                 <Sidebar />
             </header>
 
-            {isLoading && <h1>loading</h1>}
+            {isLoading && <FeedLoading />}
             {error && <h1>{error}</h1>}
             {!error &&
                 !isLoading &&
