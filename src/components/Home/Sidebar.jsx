@@ -11,13 +11,13 @@ import {
     MoreHoriz,
 } from '@mui/icons-material';
 
-import Profile from './Profile';
+// import Profile from './Profile';
 import SidebarOption from './SidebarOption';
 import TweetButton from './TweetButton';
 
 function Sidebar() {
     return (
-        <div className="flex h-full flex-col">
+        <div className="flex h-full flex-col md:px-2 xl:w-60">
             <div className=" flex flex-col items-start space-y-2  ">
                 <div className="btn-primary">
                     <Twitter sx={{ fontSize: 32 }} />
@@ -34,9 +34,7 @@ function Sidebar() {
                     <TweetButton />
                 </div>
             </div>
-            <div className="mt-auto">
-                <Profile />
-            </div>
+            <div className="mt-auto">{/* <Profile /> */}</div>
         </div>
     );
 }

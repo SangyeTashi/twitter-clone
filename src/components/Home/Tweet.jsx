@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { FaRegHeart } from 'react-icons/fa';
-import { SparklesIcon, CheckIcon } from '@heroicons/react/24/outline';
+import { CheckIcon } from '@heroicons/react/24/outline';
 
 function Tweet({ userName, userId, isVerified, avatar }) {
     const [img, setImg] = useState(null);
