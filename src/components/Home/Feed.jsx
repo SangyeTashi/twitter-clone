@@ -17,7 +17,7 @@ function Feed({ posts }) {
                             userName={`${user.first_name} ${user.last_name}`}
                             userId={`@${user.username}`}
                             //resize avatar via imagecdn
-                            avatar={`https://imagecdn.app/v2/image/${user.avatar}?width=200&height=200`}
+                            avatar={`https://imagecdn.app/v2/image/${user.avatar}?width=100&height=100`}
                             isVerified={
                                 user.subscription.status === 'Active'
                                     ? true

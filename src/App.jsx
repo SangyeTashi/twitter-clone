@@ -7,7 +7,8 @@ import FeedLoading from './components/Home/FeedLoading';
 
 function App() {
     const { data, error, isLoading } = useFetch(
-        'https://random-data-api.com/api/v2/users?size=22'
+        'https://random-data-api.com/api/v2/users?size=45',
+        []
     );
 
     return (

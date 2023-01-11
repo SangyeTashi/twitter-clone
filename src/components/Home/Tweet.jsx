@@ -1,41 +1,31 @@
-import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { FaRegHeart } from 'react-icons/fa';
 import { CheckIcon } from '@heroicons/react/24/outline';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import useFetch from './useFetch';
 
 function Tweet({ userName, userId, isVerified, avatar }) {
-    const [img, setImg] = useState(null);
-    const [quote, setQuote] = useState('');
-
     //to fetch image
-    useEffect(() => {
-        const fetchImage = async () => {
-            await axios
-                .get(
-                    'https://random.imagecdn.app/v1/image?width=490&height=300&category=nature&format=json'
-                )
-                .then((data) => {
-                    setImg(data.data.url);
-                });
-        };
 
-        //getting quotes
-        const fetchQuote = async () => {
-            await axios.get('https://api.quotable.io/random').then((data) => {
-                setQuote(data.data.content);
-            });
-        };
+    const {
+        data: image,
+        error: imageError,
+        isLoading: imageIsLoading,
+    } = useFetch(
+        'https://random.imagecdn.app/v1/image?width=490&height=300&category=nature&format=json',
+        {}
+    );
 
-        fetchQuote();
-        if (isVerified) {
-            fetchImage();
-        }
-    }, [isVerified]);
+    const {
+        data: quote,
+        error: quoteError,
+        isLoading: quoteIsLoading,
+    } = useFetch('https://api.quotable.io/random', {});
 
     return (
         <div className="flex space-x-1 border-b border-twittergrey p-3 ">
             <div className=" h-12 w-12 shrink-0  overflow-hidden rounded-full bg-slate-700">
-                <img className=" object-cover " src={avatar} alt="" />
+                <LazyLoadImage src={avatar} />
             </div>
             <div className="space-y-2 p-2">
                 <div className="flex items-center space-x-1">
@@ -48,12 +38,13 @@ function Tweet({ userName, userId, isVerified, avatar }) {
                     ) : null}
                     <h2 className="text-sm font-extralight">{userId}</h2>
                 </div>
-                <h2>{quote}</h2>
+
+                <h2>{quote.content}</h2>
+
                 {isVerified ? (
-                    <img
+                    <LazyLoadImage
                         className="rounded-2xl border border-twittergrey"
-                        src={img}
-                        alt=""
+                        src={image.url}
                     />
                 ) : null}
                 <FaRegHeart />

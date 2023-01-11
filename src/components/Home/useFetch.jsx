@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const useFetch = (dataUrl) => {
-    const [data, setData] = useState([]);
+const useFetch = (dataUrl, initialState) => {
+    const [data, setData] = useState(initialState);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
 
@@ -18,7 +18,7 @@ const useFetch = (dataUrl) => {
                 setData(response.data);
             } catch (err) {
                 setError(err.message);
-                setData([]);
+                setData(initialState);
             } finally {
                 setIsLoading(false);
             }
