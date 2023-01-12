@@ -1,9 +1,9 @@
-import Sidebar from './components/Home/Sidebar';
+import Sidebar from './pages/Home/Sidebar';
 import './App.css';
-import Feed from './components/Home/Feed';
-import Search from './components/Home/Search';
-import useFetch from './components/Home/useFetch';
-import FeedLoading from './components/Home/FeedLoading';
+import Feed from './pages/Home/Feed/Feed';
+import Search from './pages/Home/Search';
+import useFetch from './hooks/useFetch';
+import FeedLoading from './components/FeedLoading';
 
 function App() {
     const { data, error, isLoading } = useFetch(
