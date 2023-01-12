@@ -10,23 +10,20 @@ function Feed({ posts }) {
                 <SparklesIcon className="h-5" />
             </div>
 
-            <div className="Feeds">
-                {posts.map((user) => {
+            {posts.map(
+                ({ first_name, last_name, username, subscription, avatar }) => {
                     return (
                         <Tweet
-                            userName={`${user.first_name} ${user.last_name}`}
-                            userId={`@${user.username}`}
-                            //resize avatar via imagecdn
-                            avatar={`https://imagecdn.app/v2/image/${user.avatar}?width=100&height=100`}
+                            userName={`${first_name} ${last_name}`}
+                            userId={`@${username}`}
+                            avatar={`https://imagecdn.app/v2/image/${avatar}?width=100&height=100`}
                             isVerified={
-                                user.subscription.status === 'Active'
-                                    ? true
-                                    : false
+                                subscription.status === 'Active' ? true : false
                             }
                         />
                     );
-                })}
-            </div>
+                }
+            )}
         </div>
     );
 }

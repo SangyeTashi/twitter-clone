@@ -24,10 +24,13 @@ function Tweet({ userName, userId, isVerified, avatar }) {
 
     return (
         <div className="flex space-x-1 border-b border-twittergrey p-3 ">
+            {/* Avatar */}
             <div className=" h-12 w-12 shrink-0  overflow-hidden rounded-full bg-slate-700">
                 <LazyLoadImage src={avatar} />
             </div>
+
             <div className="space-y-2 p-2">
+                {/* User Name , VerifiedIcon, userId */}
                 <div className="flex items-center space-x-1">
                     <h1 className="font-bold">{userName}</h1>
                     {isVerified ? (
@@ -39,8 +42,10 @@ function Tweet({ userName, userId, isVerified, avatar }) {
                     <h2 className="text-sm font-extralight">{userId}</h2>
                 </div>
 
+                {/* Tweet Text */}
                 <h2>{quote.content}</h2>
 
+                {/* Image */}
                 {isVerified ? (
                     <LazyLoadImage
                         className="rounded-2xl border border-twittergrey"
