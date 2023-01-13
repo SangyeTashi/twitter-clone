@@ -2,13 +2,12 @@ import React from 'react';
 
 function SidebarOption({ Icon, text = null }) {
     return (
-        <div className="btn-primary group flex items-center space-x-2">
-            <div className="relative">
-                <div className="text-center">
-                    <Icon sx={{ fontSize: 27 }} />
-                </div>
-                <span
-                    className="
+        <div className="btn-primary group relative flex items-center space-x-3">
+            <Icon sx={{ fontSize: 28 }} />
+
+            {/* tooltip */}
+            <span
+                className="
                     absolute
                     left-1/2
                     -bottom-5 
@@ -22,10 +21,9 @@ function SidebarOption({ Icon, text = null }) {
                     group-hover:delay-700
                     xl:hidden
                     "
-                >
-                    {text}
-                </span>
-            </div>
+            >
+                {text}
+            </span>
             <h2 className="hidden pr-1.5 text-xl xl:inline-block">{text}</h2>
         </div>
     );

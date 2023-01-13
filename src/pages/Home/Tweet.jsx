@@ -3,7 +3,7 @@ import axios from 'axios';
 import { FaRegHeart } from 'react-icons/fa';
 import { CheckIcon } from '@heroicons/react/24/outline';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-import useFetch from '../../../hooks/useFetch';
+import useFetch from '../../hooks/useFetch';
 
 function Tweet({ userName, userId, isVerified, avatar }) {
     //to fetch image

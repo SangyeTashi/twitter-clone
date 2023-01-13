@@ -1,6 +1,6 @@
-import useFetch from '../../../hooks/useFetch';
+import useFetch from '../../hooks/useFetch';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-import FeedLoading from '../../../components/FeedLoading';
+import FeedLoading from '../../components/FeedLoading';
 
 export function TweetImage() {
     const { data, error, isLoading } = useFetch(
