@@ -39,6 +39,7 @@ function Tweet({ userName, userId, isVerified, avatar }) {
                 <h2>{quote.content}</h2>
 
                 {isVerified && <TweetImage />}
+
                 <FaRegHeart />
             </div>
         </div>
