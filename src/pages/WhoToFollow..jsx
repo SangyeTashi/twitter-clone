@@ -1,0 +1,38 @@
+import React from 'react';
+import useFetch from '../hooks/useFetch';
+import Error from '../components/Error';
+
+function WhoToFollow() {
+    const {
+        data: { username, first_name, last_name, avatar },
+        error,
+        isLoading,
+    } = useFetch('https://random-data-api.com/api/v2/users?size=1', {});
+    return (
+        <>
+            {error && <Error message={error} />}
+            {isLoading && null}
+            {!error && !isLoading && (
+                <div className="flex cursor-pointer items-center justify-between py-3 px-5 last:rounded-b-2xl hover:bg-twittergreylight">
+                    <img
+                        className="h-10 w-10 rounded-full bg-twitterpurple"
+                        src={avatar}
+                        alt={`${username}'s profile picture`}
+                    />
+                    <div className="mr-auto ml-3">
+                        <div className="">{`${first_name} ${last_name}`}</div>
+                        <div className="text-sm font-light text-gray-400">
+                            @{username}
+                        </div>
+                    </div>
+
+                    <button className="rounded-full bg-twitterwhite px-3 py-1 text-sm text-black hover:bg-gray-300">
+                        Follow
+                    </button>
+                </div>
+            )}
+        </>
+    );
+}
+
+export default WhoToFollow;
