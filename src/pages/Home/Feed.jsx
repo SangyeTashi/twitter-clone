@@ -1,7 +1,7 @@
 import React from 'react';
 import Tweet from './Tweet';
 import { SparklesIcon } from '@heroicons/react/24/outline';
-
+import TweetForm from './TweetForm';
 function Feed({ posts }) {
     return (
         <div className=" w-[600px] overflow-y-scroll border-x-[0.3px] border-twittergrey ">
@@ -10,16 +10,21 @@ function Feed({ posts }) {
                 <SparklesIcon className="h-5" />
             </div>
 
+            <TweetForm />
+
             {posts.map(
-                ({ first_name, last_name, username, subscription, avatar }) => {
+                ({
+                    quote: { author, content, authorSlug, length },
+                    avatar,
+                    isVerified,
+                }) => {
                     return (
                         <Tweet
-                            userName={`${first_name} ${last_name}`}
-                            userId={`@${username}`}
-                            avatar={`https://imagecdn.app/v2/image/${avatar}?width=100&height=100`}
-                            isVerified={
-                                subscription.status === 'Active' ? true : false
-                            }
+                            userName={author}
+                            userId={`@${authorSlug}`}
+                            content={content}
+                            avatar={avatar}
+                            isVerified={isVerified}
                         />
                     );
                 }

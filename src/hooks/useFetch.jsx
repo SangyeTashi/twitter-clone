@@ -24,7 +24,7 @@ const useFetch = (dataUrl, initialState) => {
             }
         };
         fetchData(dataUrl);
-    }, [dataUrl]);
+    }, []);
 
     return { data, isLoading, error };
 };

@@ -17,7 +17,7 @@ import Profile from './Profile';
 
 function Sidebar() {
     return (
-        <div className="flex h-full flex-col overflow-y-scroll xl:w-64">
+        <div className="flex h-full flex-col px-2 xl:w-64">
             <div className=" flex flex-col items-start space-y-2  ">
                 <div className="btn-primary">
                     <Twitter sx={{ fontSize: 32 }} />

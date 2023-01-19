@@ -2,7 +2,7 @@ import React from 'react';
 import { ArrowPathIcon } from '@heroicons/react/24/solid';
 function FeedLoading() {
     return (
-        <div className=" p-5">
+        <div className="">
             <div className="w-8 animate-spin ">
                 <ArrowPathIcon />
             </div>

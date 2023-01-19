@@ -3,6 +3,7 @@ import { CheckIcon } from '@heroicons/react/24/outline';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import useFetch from '../../hooks/useFetch';
 import Interactions from './Interactions';
+import Error from '../../components/Error';
 
 function Tweet({ userName, userId, isVerified, avatar }) {
     //to fetch image
@@ -35,7 +36,9 @@ function Tweet({ userName, userId, isVerified, avatar }) {
                 </div>
 
                 {/* Tweet Text */}
-                <h2>{quote.content}</h2>
+                {quoteError && <Error message={quoteError} />}
+                {quoteIsLoading && null}
+                {!quoteError && !quoteIsLoading && <h2>{quote.content}</h2>}
 
                 {isVerified && <TweetImage />}
                 <Interactions />
