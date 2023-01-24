@@ -17,6 +17,7 @@ const useFetch = (dataUrl, initialState) => {
                 });
                 setData(response.data);
             } catch (err) {
+                controller.abort();
                 setError(err.message);
                 setData(initialState);
             } finally {
@@ -24,7 +25,7 @@ const useFetch = (dataUrl, initialState) => {
             }
         };
         fetchData(dataUrl);
-    }, []);
+    }, [dataUrl]);
 
     return { data, isLoading, error };
 };

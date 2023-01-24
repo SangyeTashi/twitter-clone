@@ -21,7 +21,6 @@ function useGetAllPosts() {
     // Merge the avatar image and the quotes
     useEffect(() => {
         // check that both datas are loaded
-
         if (quotesError || randomUsersError) {
             setPostsError(quotes.error + randomUsersError);
             return;
