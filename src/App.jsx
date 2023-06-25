@@ -6,6 +6,7 @@ import Feed from './pages/Home/Feed';
 import Search from './pages/Search';
 import useFetch from './hooks/useFetch';
 import FeedLoading from './components/FeedLoading';
+import TweetForm from './pages/Home/TwitterForm/TweetForm';
 
 export const UserContext = createContext({});
 
@@ -23,6 +24,7 @@ function App() {
                     <Sidebar />
                 </header>
                 <div className=" w-[600px] overflow-y-scroll border-x-[0.3px] border-twittergrey ">
+                    <TweetForm />
                     {postsIsLoading && <FeedLoading />}
                     {postsError && <h1>{postsError}</h1>}
                     {!postsError &&

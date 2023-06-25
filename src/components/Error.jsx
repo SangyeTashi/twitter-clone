@@ -1,6 +1,6 @@
 import React from 'react';
 import { ErrorOutline } from '@mui/icons-material';
-function Error(message) {
+function Error({ message }) {
     return (
         <div>
             <ErrorOutline />

@@ -3,7 +3,7 @@ import { ArrowPathIcon } from '@heroicons/react/24/solid';
 function FeedLoading() {
     return (
         <div className="flex items-center justify-center p-4">
-            <div>
+            <div className="flex items-center">
                 <div className="w-8 animate-spin ">
                     <ArrowPathIcon />
                 </div>
