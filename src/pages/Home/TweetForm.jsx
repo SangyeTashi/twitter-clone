@@ -19,7 +19,7 @@ function TweetForm() {
     } = useContext(UserContext);
 
     return (
-        <div className="flex p-3 text-twitterPurpleLight">
+        <div className="flex w-full p-3 text-twitterPurpleLight">
             <img
                 className="h-12 rounded-full bg-fuchsia-500"
                 src={avatar}

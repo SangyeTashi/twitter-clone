@@ -22,13 +22,17 @@ function App() {
                 <header className="flex h-screen grow flex-col items-end py-2">
                     <Sidebar />
                 </header>
-
-                {postsIsLoading && <FeedLoading />}
-                {postsError && <h1>{postsError}</h1>}
-                {!postsError &&
-                    !postsIsLoading &&
-                    (posts.length ? <Feed posts={posts} /> : <h2>No Posts</h2>)}
-
+                <div className=" w-[600px] overflow-y-scroll border-x-[0.3px] border-twittergrey ">
+                    {postsIsLoading && <FeedLoading />}
+                    {postsError && <h1>{postsError}</h1>}
+                    {!postsError &&
+                        !postsIsLoading &&
+                        (posts.length ? (
+                            <Feed posts={posts} />
+                        ) : (
+                            <h2>No Posts</h2>
+                        ))}
+                </div>
                 <div className="flex grow items-start">
                     <Search />
                 </div>
