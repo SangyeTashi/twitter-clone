@@ -17,7 +17,7 @@ function TweetForm() {
                 <SparklesIcon className="h-5" />
             </div>
 
-            <div className="flex p-3 text-twitterPurpleLight">
+            <div className="flex items-center p-3 text-twitterPurpleLight">
                 <div className="flex flex-grow flex-col px-4">
                     <div>
                         <div className="inline rounded-full border border-twitterPurpleLight p-2 text-sm">

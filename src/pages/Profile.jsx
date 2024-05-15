@@ -8,7 +8,7 @@ function Profile() {
         'https://random-data-api.com/api/v2/users?size=1'
     );
 
-    if (isLoading) {
+    if (isLoading || error) {
         return null;
     }
     return (

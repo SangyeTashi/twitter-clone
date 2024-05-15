@@ -7,9 +7,9 @@ import Error from '../../components/Error';
 
 function Tweet({ userName, userId, isVerified, avatar, content }) {
     return (
-        <div className="flex cursor-pointer space-x-1 border-b border-twittergrey p-3 hover:bg-twittergrey/40 ">
+        <div className="flex cursor-pointer space-x-1  border-b border-twittergrey p-2 text-sm hover:bg-twittergrey/40 md:p-3 md:text-base ">
             {/* Avatar */}
-            <div className="h-10 w-10 shrink-0 overflow-hidden rounded-full bg-slate-700">
+            <div className="h-8 w-8  shrink-0 overflow-hidden rounded-full bg-slate-700 md:h-10 md:w-10">
                 <LazyLoadImage src={avatar} />
             </div>
 

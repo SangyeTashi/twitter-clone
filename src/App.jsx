@@ -34,6 +34,7 @@ function App() {
                 <TweetForm />
                 {usersLoading && <FeedLoading />}
                 {usersError && <Error message={usersError} />}
+                {quotesError && <Error message={quotesError} />}
                 {!usersLoading && !quoteIsLoading && (
                     <Feed users={users} quotes={quotes} />
                 )}

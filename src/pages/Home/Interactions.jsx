@@ -9,7 +9,7 @@ import {
 
 function Interactions({ retweets, comments, likes }) {
     return (
-        <div className="flex justify-around text-base text-gray-500">
+        <div className="flex justify-around text-sm text-gray-500 md:text-base">
             <InteractionIcon Icon={FaRegHeart} />
             <InteractionIcon Icon={FaRegComment} />
             <InteractionIcon Icon={FaRetweet} />
