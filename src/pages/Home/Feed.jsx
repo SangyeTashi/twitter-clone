@@ -1,27 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Tweet from './Tweet';
 
-import TweetForm from './TwitterForm/TweetForm';
-function Feed({ posts }) {
+function Feed({ users, quotes }) {
+    console.log('quotes', quotes.results);
+    console.log('users', users);
+
     return (
         <>
-            {posts.map(
-                ({
-                    quote: { author, content, authorSlug, length },
-                    avatar,
-                    isVerified,
-                }) => {
-                    return (
-                        <Tweet
-                            userName={author}
-                            userId={`@${authorSlug}`}
-                            content={content}
-                            avatar={avatar}
-                            isVerified={isVerified}
-                        />
-                    );
-                }
-            )}
+            {quotes.results.map((quote, index) => {
+                const { author, authorSlug, content } = quote;
+                return (
+                    <Tweet
+                        key={index}
+                        userName={author}
+                        userId={`@${authorSlug}`}
+                        content={content}
+                        isVerified={Math.random() > 0.5 ? true : false}
+                        avatar={users[index + 1].avatar}
+                    />
+                );
+            })}
         </>
     );
 }

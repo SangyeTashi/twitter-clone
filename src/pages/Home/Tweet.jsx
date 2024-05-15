@@ -5,15 +5,7 @@ import useFetch from '../../hooks/useFetch';
 import Interactions from './Interactions';
 import Error from '../../components/Error';
 
-function Tweet({ userName, userId, isVerified, avatar }) {
-    //to fetch image
-
-    const {
-        data: quote,
-        error: quoteError,
-        isLoading: quoteIsLoading,
-    } = useFetch('https://api.quotable.io/random', {});
-
+function Tweet({ userName, userId, isVerified, avatar, content }) {
     return (
         <div className="flex cursor-pointer space-x-1 border-b border-twittergrey p-3 hover:bg-twittergrey/40 ">
             {/* Avatar */}
@@ -35,10 +27,7 @@ function Tweet({ userName, userId, isVerified, avatar }) {
                     <h2 className="text-sm font-extralight">{userId}</h2>
                 </div>
 
-                {/* Tweet Text */}
-                {quoteError && <Error message={quoteError} />}
-                {quoteIsLoading && null}
-                {!quoteError && !quoteIsLoading && <h2>{quote.content}</h2>}
+                <h2>{content}</h2>
 
                 {isVerified && <TweetImage />}
                 <Interactions />

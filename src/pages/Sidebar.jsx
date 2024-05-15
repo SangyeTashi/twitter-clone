@@ -30,7 +30,7 @@ function Sidebar() {
                 <SidebarOption Icon={ListAlt} text="Lists" />
                 <SidebarOption Icon={PermIdentity} text="Profile" />
                 <SidebarOption Icon={MoreHoriz} text="More" />
-                <div className="self-center pt-5 xl:self-stretch">
+                <div className=" pt-5 xl:self-stretch">
                     <TweetButton />
                 </div>
             </div>
