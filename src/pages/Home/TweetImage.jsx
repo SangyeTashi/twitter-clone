@@ -15,8 +15,6 @@ export function TweetImage() {
                 <LazyLoadImage
                     className="rounded-2xl border border-twittergrey"
                     src={data.url}
-                    width={490}
-                    height={300}
                 />
             )}
         </>

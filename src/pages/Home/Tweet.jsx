@@ -9,7 +9,7 @@ function Tweet({ userName, userId, isVerified, avatar, content }) {
     return (
         <div className="flex cursor-pointer space-x-1 border-b border-twittergrey p-3 hover:bg-twittergrey/40 ">
             {/* Avatar */}
-            <div className=" h-12 w-12 shrink-0  overflow-hidden rounded-full bg-slate-700">
+            <div className="h-10 w-10 shrink-0 overflow-hidden rounded-full bg-slate-700">
                 <LazyLoadImage src={avatar} />
             </div>
 

@@ -3,7 +3,7 @@ import React from 'react';
 function SidebarOption({ Icon, text = null }) {
     return (
         <div className="btn-primary group relative flex items-center space-x-3">
-            <Icon sx={{ fontSize: 28 }} />
+            <Icon sx={{ fontSize: 23 }} />
 
             {/* tooltip */}
             <span

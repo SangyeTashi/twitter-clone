@@ -8,30 +8,32 @@ function Profile() {
         'https://random-data-api.com/api/v2/users?size=1'
     );
 
-    useEffect(() => {
-        console.log(data);
-    }, [isLoading]);
+    if (isLoading) {
+        return null;
+    }
     return (
-        <div className="btn-primary flex items-center space-x-2">
-            {/* <img
-                src={r}
-                className="h-9 w-9 rounded-full bg-blue-700 object-cover xl:ml-1"
-                alt="profile photo"
-                loading="lazy"
-            /> */}
-            {/* 
-            <div className="hidden  grow items-center text-sm xl:flex">
-                <div>
-                    {`${first_name} ${last_name}`}
-                    <span className="ml-1">
-                        {<Lock sx={{ fontSize: 15 }} />}
-                    </span>
-                    <div className="text-gray-500">@{username}</div>
-                </div>
+        !isLoading && (
+            <div className="btn-primary flex items-center space-x-2">
+                <img
+                    src={data.avatar}
+                    className="h-9 w-9 rounded-full bg-blue-700 object-cover xl:ml-1"
+                    alt="profile photo"
+                    loading="lazy"
+                />
 
-                <MoreHoriz className="ml-auto" />
-            </div> */}
-        </div>
+                <div className="hidden  grow items-center text-sm xl:flex">
+                    <div>
+                        {`${data.first_name} ${data.last_name}`}
+                        <span className="ml-1">
+                            {<Lock sx={{ fontSize: 15 }} />}
+                        </span>
+                        <div className="text-gray-500">@{data.username}</div>
+                    </div>
+
+                    <MoreHoriz className="ml-auto" />
+                </div>
+            </div>
+        )
     );
 }
 
